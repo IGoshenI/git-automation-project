@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:git_automation_project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="400"
+        ResizeMode="NoResize" Background="#181735">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="GIT CLIENT"
+                       Foreground="Ivory"
+                       FontSize="45"
+                       FontFamily="Consolas"
+                       VerticalAlignment="Center" Margin="20"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Button x:Name="pushButton"
+                    Background="Ivory"
+                    Content="PUSH!"
+                    FontFamily="Consolas"
+                    FontSize="20"
+                    VerticalAlignment="Center" Margin="80, 10"
+                    HorizontalAlignment="Center" Height="50" Width="230"/>
+        </StackPanel>
         
     </Grid>
 </Window>
