@@ -32,7 +32,7 @@ namespace git_automation_project
             var textBox = (TextBox)sender;
             if (textBox.Text == "")
             {
-                textBox.Text = ">Enter your commit here";
+                textBox.Text = "> Enter your commit here";
                 textBox.Foreground = Brushes.SlateGray;
             }
         }

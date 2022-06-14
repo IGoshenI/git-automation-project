@@ -52,7 +52,7 @@
                        FontFamily="Consolas"
                        LostFocus="commitInputText_LostFocus"
                        GotFocus="commitInputText_GotFocus"
-                       Text=">Enter your commit here"
+                       Text="> Enter your commit here"
                        Foreground="SlateGray"
                        Padding="7, 6, 6, 6"
                        Margin="35,5,65,5" Width="294"
