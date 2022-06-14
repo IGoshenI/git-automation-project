@@ -65,7 +65,9 @@ namespace git_automation_project
 
         private void helpButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("1. Add your files to the shared directory\n" +
+                "2. Enter your commit message\n" +
+                "3. Press the 'PUSH!' button");
         }
     }
 }
