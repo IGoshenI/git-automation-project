@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:git_automation_project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="400"
+        Title="Git Client" Height="350" Width="400"
         ResizeMode="NoResize" Background="#181735">
     <Grid>
         <Grid.RowDefinitions>
@@ -32,7 +32,8 @@
                     FontFamily="Consolas"
                     FontSize="20"
                     VerticalAlignment="Center" Margin="80, 10"
-                    HorizontalAlignment="Center" Height="50" Width="230"/>
+                    HorizontalAlignment="Center" Height="50" Width="230" 
+                    Click="pushButton_Click"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2">
@@ -57,6 +58,30 @@
                        Margin="35,5,65,5" Width="294"
                        Height="32"/>
         </StackPanel>
+
+        <Image Height="46" Margin="323,27,25,0" Grid.Row="2" Grid.RowSpan="2">
+            <Image.Source>
+                <BitmapImage  UriSource="Assets/folder.png" />
+            </Image.Source>
+        </Image>
+
+        <Button Name = "openDirectoryButton" 
+                Background="Transparent" 
+                BorderBrush="Transparent"
+                Margin="330,10,32,10" Grid.Row="3" 
+                Click="openDirectoryButton_Click"/>
+
+        <Image Margin="0,18,317,0" Grid.Row="4">
+            <Image.Source>
+                <BitmapImage  UriSource="Assets/question button.png" />
+            </Image.Source>
+        </Image>
+
+        <Button Name = "helpButton" 
+                Background="Transparent" 
+                BorderBrush="Transparent"
+                Margin="10,26,329,10" Grid.Row="4"
+                Click="helpButton_Click"  />
 
     </Grid>
 </Window>

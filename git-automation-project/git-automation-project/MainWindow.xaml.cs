@@ -43,5 +43,20 @@ namespace git_automation_project
             textBox.Text = "";
             textBox.Foreground = Brushes.SlateGray;
         }
+
+        private void pushButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void openDirectoryButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void helpButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
