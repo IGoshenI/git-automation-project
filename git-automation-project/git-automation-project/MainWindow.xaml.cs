@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,15 @@ namespace git_automation_project
 
         private void openDirectoryButton_Click(object sender, RoutedEventArgs e)
         {
+            Process.Start(GetDirectory());
+        }
 
+        private string GetDirectory()
+        {
+            return System.IO.Directory.GetParent
+                (System.IO.Directory.GetParent
+                (System.IO.Directory.GetParent
+                (System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString(); // :/
         }
 
         private void helpButton_Click(object sender, RoutedEventArgs e)
