@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace git_automation_project
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -33,8 +30,11 @@ namespace git_automation_project
         private void commitInputText_LostFocus(object sender, RoutedEventArgs e)
         {
             var textBox = (TextBox)sender;
-            textBox.Text = "> Enter your commit here";
-            textBox.Foreground = Brushes.SlateGray;
+            if (textBox.Text == "")
+            {
+                textBox.Text = ">Enter your commit here";
+                textBox.Foreground = Brushes.SlateGray;
+            }
         }
 
         private void commitInputText_GotFocus(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace git_automation_project
 
         private void pushButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(this.commitInputText.Text);
         }
 
         private void openDirectoryButton_Click(object sender, RoutedEventArgs e)
