@@ -5,8 +5,83 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:git_automation_project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Git Client" Height="350" Width="400"
+        ResizeMode="NoResize" Background="#181735">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="GIT CLIENT"
+                       Foreground="Ivory"
+                       FontSize="45"
+                       FontFamily="Consolas"
+                       VerticalAlignment="Center" Margin="20"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+            <Button x:Name="pushButton"
+                    Background="Ivory"
+                    Content="PUSH!"
+                    FontFamily="Consolas"
+                    FontSize="20"
+                    VerticalAlignment="Center" Margin="80, 10"
+                    HorizontalAlignment="Center" Height="50" Width="230" 
+                    Click="pushButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Enter your commit here:"
+                       Foreground="Ivory"
+                       FontFamily="Consolas"
+                       FontSize="15"
+                       VerticalAlignment="Center" Margin="8"
+                       HorizontalAlignment="Center"
+                       />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBox x:Name="commitInputText"
+                       Background="Ivory"
+                       FontFamily="Consolas"
+                       LostFocus="commitInputText_LostFocus"
+                       GotFocus="commitInputText_GotFocus"
+                       Text="> Enter your commit here"
+                       Foreground="SlateGray"
+                       Padding="7, 6, 6, 6"
+                       Margin="35,5,65,5" Width="294"
+                       Height="32"/>
+        </StackPanel>
+
+        <Image Height="46" Margin="327,27,21,0" Grid.Row="1" Grid.RowSpan="2">
+            <Image.Source>
+                <BitmapImage  UriSource="Assets/folder.png" />
+            </Image.Source>
+        </Image>
+
+        <Button Name = "openDirectoryButton" 
+                Background="Transparent" 
+                BorderBrush="Transparent"
+                Margin="334,5,28,0" Grid.Row="2" 
+                Click="openDirectoryButton_Click" RenderTransformOrigin="1.562,-0.593"/>
+
+        <Image Margin="0,18,317,0" Grid.Row="4">
+            <Image.Source>
+                <BitmapImage  UriSource="Assets/question button.png" />
+            </Image.Source>
+        </Image>
+
+        <Button Name = "helpButton" 
+                Background="Transparent" 
+                BorderBrush="Transparent"
+                Margin="10,26,329,10" Grid.Row="4"
+                Click="helpButton_Click"  />
+
     </Grid>
 </Window>
