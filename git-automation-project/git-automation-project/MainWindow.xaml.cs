@@ -24,5 +24,24 @@ namespace git_automation_project
         {
             InitializeComponent();
         }
+
+        private void commitInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void commitInputText_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            textBox.Text = "> Enter your commit here";
+            textBox.Foreground = Brushes.SlateGray;
+        }
+
+        private void commitInputText_GotFocus(object sender, RoutedEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            textBox.Text = "";
+            textBox.Foreground = Brushes.SlateGray;
+        }
     }
 }
