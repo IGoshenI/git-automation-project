@@ -10,9 +10,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="70"/>
             <RowDefinition Height="28"/>
             <RowDefinition Height="45"/>
+            <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -25,7 +25,7 @@
                        HorizontalAlignment="Center"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="3">
             <Button x:Name="pushButton"
                     Background="Ivory"
                     Content="PUSH!"
@@ -36,7 +36,7 @@
                     Click="pushButton_Click"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2">
+        <StackPanel Grid.Row="1">
             <TextBlock Text="Enter your commit here:"
                        Foreground="Ivory"
                        FontFamily="Consolas"
@@ -46,7 +46,7 @@
                        />
         </StackPanel>
 
-        <StackPanel Grid.Row="3">
+        <StackPanel Grid.Row="2">
             <TextBox x:Name="commitInputText"
                        Background="Ivory"
                        FontFamily="Consolas"
@@ -59,7 +59,7 @@
                        Height="32"/>
         </StackPanel>
 
-        <Image Height="46" Margin="323,27,25,0" Grid.Row="2" Grid.RowSpan="2">
+        <Image Height="46" Margin="327,27,21,0" Grid.Row="1" Grid.RowSpan="2">
             <Image.Source>
                 <BitmapImage  UriSource="Assets/folder.png" />
             </Image.Source>
@@ -68,8 +68,8 @@
         <Button Name = "openDirectoryButton" 
                 Background="Transparent" 
                 BorderBrush="Transparent"
-                Margin="330,10,32,10" Grid.Row="3" 
-                Click="openDirectoryButton_Click"/>
+                Margin="334,5,28,0" Grid.Row="2" 
+                Click="openDirectoryButton_Click" RenderTransformOrigin="1.562,-0.593"/>
 
         <Image Margin="0,18,317,0" Grid.Row="4">
             <Image.Source>
