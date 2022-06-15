@@ -55,10 +55,12 @@ namespace git_automation_project
         {
             using (PowerShell powershell = PowerShell.Create())
             {
-                // this changes from the user folder that PowerShell starts up with to your git repository
                 powershell.AddScript($"cd {this._directory}");
 
+                powershell.AddScript(@"git git pull");
                 powershell.AddScript(@"git add -A");
+                powershell.AddScript(@"git git commit -m '{this.commitInputText.Text}'");
+                powershell.AddScript(@"git push");
 
                 Collection<PSObject> results = powershell.Invoke();
             }
