@@ -13,14 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Management;
+using System.Management.Automation;
+using System.Collections.ObjectModel;
 
 namespace git_automation_project
 {
     public partial class MainWindow : Window
     {
+        private string _directory;
+
         public MainWindow()
         {
             InitializeComponent();
+            GetDirectory();
         }
 
         private void commitInput_TextChanged(object sender, TextChangedEventArgs e)
@@ -47,17 +53,26 @@ namespace git_automation_project
 
         private void pushButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(this.commitInputText.Text);
-        }
+            using (PowerShell powershell = PowerShell.Create())
+            {
+                // this changes from the user folder that PowerShell starts up with to your git repository
+                powershell.AddScript($"cd {this._directory}");
 
+                powershell.AddScript(@"git add -A");
+
+                Collection<PSObject> results = powershell.Invoke();
+            }
+        }
         private void openDirectoryButton_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(GetDirectory());
+            Process.Start(this._directory);
         }
 
-        private string GetDirectory()
+        private void GetDirectory()
         {
-            return System.IO.Directory.GetParent
+
+
+            this._directory = System.IO.Directory.GetParent
                 (System.IO.Directory.GetParent
                 (System.IO.Directory.GetParent
                 (System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString(); // :/
